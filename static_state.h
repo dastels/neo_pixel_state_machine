@@ -13,7 +13,7 @@ class StaticState: public State
 {
  public:
   StaticState(StateMachine *owner_machine);
-  void enter(void *data);
+  void enter(uint8_t *data);
   void mode_button();
   void red_button();
   void green_button();

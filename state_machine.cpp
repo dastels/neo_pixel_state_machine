@@ -6,6 +6,7 @@
 #include <Arduino.h>
 #include "state_machine.h"
 
+uint8_t colour_data[3] = {0, 0, 0};
 
 StateMachine::StateMachine()
   : _current_state(NULL)
@@ -33,7 +34,7 @@ bool StateMachine::add_state(State *state)
 
 bool StateMachine::reset()
 {
-  if (go_to_state(_initial_state_name)) {
+  if (go_to_state(_initial_state_name, colour_data)) {
     return true;
   }
   Serial.print("Resetting to ");
@@ -54,7 +55,7 @@ State *StateMachine::find_state(char *state_name)
 }
 
 
-bool StateMachine::go_to_state(char *state_name, void *data)
+bool StateMachine::go_to_state(char *state_name, uint8_t *data)
 {
   if (!state_name || !*state_name) { // no state name
     Serial.println("No state name to go to");

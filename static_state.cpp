@@ -11,17 +11,22 @@ StaticState::StaticState(StateMachine *machine)
 }
 
 
-void StaticState::enter(void *data)
+void StaticState::enter(uint8_t *data)
 {
-  red = 0;
-  green = 0;
-  blue = 0;
+  cached_data = data;
+  red = data[0];
+  green = data[1];
+  blue = data[2];
   update_neopixels(red, green, blue);
 }
 
 
 void StaticState::mode_button()
 {
+  cached_data[0] = red;
+  cached_data[1] = green;
+  cached_data[2] = blue;
+  go_to("breathe1", cached_data);
 }
 
 

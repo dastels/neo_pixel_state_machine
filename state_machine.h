@@ -25,7 +25,7 @@ class StateMachine {
   StateMachine();
   bool add_state(State *state);
   bool reset();
-  bool go_to_state(char *state_name, void *data=nullptr);
+  bool go_to_state(char *state_name, uint8_t *data=nullptr);
   void tick(uint32_t now);
   void mode_button();
   void red_button();
