@@ -15,10 +15,11 @@ class State {
  protected:
   StateMachine *_machine;
   uint8_t *cached_data;
-  void update_neopixels(uint8_t red, uint8_t green, uint8_t blue);
+  void update_neopixels(uint8_t red, uint8_t green, uint8_t blue, uint8_t white);
   uint8_t red;
   uint8_t green;
   uint8_t blue;
+  uint8_t white;
 
  private:
   char *_name;
@@ -38,6 +39,9 @@ class State {
   virtual void blue_button() {}
   void go_to(char *state_name, uint8_t *data=nullptr);
   uint8_t next_colour(uint8_t c);
+  uint8_t next_intensity(uint8_t c);
+  uint8_t middle_intensity(uint8_t c);
+  uint8_t previous_intensity(uint8_t c);
 };
 
 #endif

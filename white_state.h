@@ -1,18 +1,19 @@
 // -*- mode: c++ -*-
-// Static colour state
+// All white colour state
 //
 // Copyright (c) 2021 Dave Astels
+// Revision to add white state by Rob Mohr
 
 #include "state_machine.h"
 #include "state.h"
 
-#ifndef __STATIC_STATE__
-#define __STATIC_STATE__
+#ifndef __WHITE_STATE__
+#define __WHITE_STATE__
 
-class StaticState: public State
+class WhiteState: public State
 {
  public:
-  StaticState(StateMachine *owner_machine);
+WhiteState(StateMachine *owner_machine);
   void enter(uint8_t *data);
   void mode_button();
   void red_button();

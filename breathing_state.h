@@ -17,7 +17,7 @@ class BreathingState: public State
 
  protected:
   uint8_t compute_fractional(uint8_t colour);
-  void update_fractional(uint8_t r, uint8_t g, uint8_t b);
+  void update_fractional(uint8_t r, uint8_t g, uint8_t b, uint8_t w);
 
   uint32_t step_time;
   uint32_t step_interval;

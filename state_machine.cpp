@@ -6,7 +6,7 @@
 #include <Arduino.h>
 #include "state_machine.h"
 
-uint8_t colour_data[3] = {0, 0, 0};
+uint8_t colour_data[4] = {0, 0, 0, 0};
 
 StateMachine::StateMachine()
   : _current_state(NULL)

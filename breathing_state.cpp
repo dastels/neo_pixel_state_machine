@@ -20,9 +20,9 @@ uint8_t BreathingState::compute_fractional(uint8_t colour)
 }
 
 
-void BreathingState::update_fractional(uint8_t r, uint8_t g, uint8_t b)
+void BreathingState::update_fractional(uint8_t r, uint8_t g, uint8_t b, uint8_t w)
 {
-  update_neopixels(compute_fractional(r), compute_fractional(g), compute_fractional(b));
+  update_neopixels(compute_fractional(r), compute_fractional(g), compute_fractional(b), compute_fractional(w));
 }
 
 
@@ -37,7 +37,7 @@ void BreathingState::tick(uint32_t now)
       breathe_value = 0.0;
       breathe_delta *= -1;
     }
-    update_fractional(red, green, blue);
+    update_fractional(red, green, blue, white);
     step_time = now + step_interval;
   }
 }
