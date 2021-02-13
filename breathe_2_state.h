@@ -1,18 +1,18 @@
 // -*- mode: c++ -*-
-// Breathing state with colour adjust
+// Breathing state with speed adjust
 //
 // Copyright (c) 2021 Dave Astels
 
 #include "state_machine.h"
 #include "state.h"
 
-#ifndef __BREATHE_1_STATE__
-#define __BREATHE_1_STATE__
+#ifndef __BREATHE_2_STATE__
+#define __BREATHE_2_STATE__
 
-class Breathe1State: public State
+class Breathe2State: public State
 {
  public:
-  Breathe1State(StateMachine *owner_machine);
+  Breathe2State(StateMachine *owner_machine);
   void enter(uint8_t *data);
   void mode_button(void);
   void red_button(void);

@@ -1,17 +1,16 @@
 // -*- mode: c++ -*-
-// Breate 1 state
+// Breathing state with colour adjust
 //
 // Copyright (c) 2021 Dave Astels
 
 #include "breathe_1_state.h"
 
-const int default_breath_time = 5000; // in milliseconds
-void* cached_data;
+#define DEFAULT_BREATH_TIME (5000) // in milliseconds
 
 Breathe1State::Breathe1State(StateMachine *machine)
   : State(machine, "breathe1")
   , breathe_delta(5.0)          // changes of 5%
-  , step_interval(default_breath_time / 100)
+  , step_interval(DEFAULT_BREATH_TIME / 100)
   , step_time(0)
 {
 
@@ -24,8 +23,8 @@ void Breathe1State::enter(uint8_t *data)
   red = data[0];
   green = data[1];
   blue = data[2];
-  update_neopixels(red, green, blue);
   breathe_value = 100.0;
+  update_fractional(red, green, blue);
 }
 
 
@@ -45,7 +44,7 @@ void Breathe1State::mode_button(void)
   cached_data[0] = red;
   cached_data[1] = green;
   cached_data[2] = blue;
-  go_to("static", cached_data);
+  go_to("breathe2", cached_data);
 }
 
 
@@ -81,7 +80,7 @@ void Breathe1State::tick(uint32_t now)
       breathe_value = 0.0;
       breathe_delta *= -1;
     }
-    update_neopixels(compute_fractional(red), compute_fractional(green), compute_fractional(blue));
+    update_fractional(red, green, blue);
     step_time = now + step_interval;
   }
 }
