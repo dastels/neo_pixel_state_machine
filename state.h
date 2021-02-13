@@ -16,6 +16,9 @@ class State {
   StateMachine *_machine;
   uint8_t *cached_data;
   void update_neopixels(uint8_t red, uint8_t green, uint8_t blue);
+  uint8_t red;
+  uint8_t green;
+  uint8_t blue;
 
  private:
   char *_name;
