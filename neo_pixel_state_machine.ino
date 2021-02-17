@@ -7,6 +7,7 @@
 #include <Adafruit_NeoPixel.h>
 #include <Bounce2.h>
 #include "state_machine.h"
+#include "white_state.h"
 #include "static_state.h"
 #include "breathe_1_state.h"
 #include "breathe_2_state.h"
@@ -20,7 +21,7 @@ Bounce mode_button = Bounce();
 Bounce red_button = Bounce();
 Bounce green_button = Bounce();
 Bounce blue_button = Bounce();
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(1, 1, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(7, 1, NEO_GRBW + NEO_KHZ800);
 StateMachine machine = StateMachine();
 
 void setup()
@@ -37,6 +38,7 @@ void setup()
   blue_button.attach (4, INPUT_PULLUP);
   blue_button.interval(5);
 
+  machine.add_state(new WhiteState(&machine));
   machine.add_state(new StaticState(&machine));
   machine.add_state(new Breathe1State(&machine));
   machine.add_state(new Breathe2State(&machine));
