@@ -36,7 +36,7 @@ uint8_t State::next_value(uint8_t c)
 {
   if (c == 255) {
     return 0;
-  } else if (c == 240) {
+  } else if (c >= 240) {
     return 255;
   } else {
     return c + 16;
@@ -52,7 +52,7 @@ uint8_t State::previous_value(uint8_t c)
 {
   if (c == 0) {
     return 255;
-  } else if (c == 15) {
+  } else if (c <= 15) {
     return 0;
   } else {
     return c - 16;
