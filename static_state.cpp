@@ -17,7 +17,8 @@ void StaticState::enter(uint8_t *data)
   red = data[0];
   green = data[1];
   blue = data[2];
-  update_neopixels(red, green, blue);
+  white = data[3];
+  update_neopixels(red, green, blue, white);
 }
 
 
@@ -26,38 +27,26 @@ void StaticState::mode_button()
   cached_data[0] = red;
   cached_data[1] = green;
   cached_data[2] = blue;
+  cached_data[3] = white;
   go_to("breathe1", cached_data);
 }
 
-
-uint8_t next_colour(uint8_t c)
-{
-  if (c == 255) {
-    return 0;
-  } else if (c == 240) {
-    return 255;
-  } else {
-    return c + 16;
-  }
-}
-
-
 void StaticState::red_button()
 {
-  red = next_colour(red);
-  update_neopixels(red, green, blue);
+  red = next_value(red);
+  update_neopixels(red, green, blue, white);
 }
 
 
 void StaticState::green_button()
 {
-  green = next_colour(green);
-  update_neopixels(red, green, blue);
+  green = next_value(green);
+  update_neopixels(red, green, blue, white);
 }
 
 
 void StaticState::blue_button()
 {
-  blue = next_colour(blue);
-  update_neopixels(red, green, blue);
+  blue = next_value(blue);
+  update_neopixels(red, green, blue, white);
 }

@@ -26,14 +26,13 @@ void State::go_to(char *state_name, uint8_t *data)
   _machine->go_to_state(state_name, data);
 }
 
-void State::update_neopixels(uint8_t red, uint8_t green, uint8_t blue)
+void State::update_neopixels(uint8_t red, uint8_t green, uint8_t blue,uint8_t white)
 {
-  strip.fill(strip.Color(red, green, blue));
+  strip.fill(strip.Color(red, green, blue, white));
   strip.show();
 }
 
-
-uint8_t State::next_colour(uint8_t c)
+uint8_t State::next_value(uint8_t c)
 {
   if (c == 255) {
     return 0;
@@ -41,5 +40,21 @@ uint8_t State::next_colour(uint8_t c)
     return 255;
   } else {
     return c + 16;
+  }
+}
+
+uint8_t State::middle_value(uint8_t c)
+{
+  return 127;
+}
+
+uint8_t State::previous_value(uint8_t c)
+{
+  if (c == 0) {
+    return 255;
+  } else if (c == 15) {
+    return 0;
+  } else {
+    return c - 16;
   }
 }

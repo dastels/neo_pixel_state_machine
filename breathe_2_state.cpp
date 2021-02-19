@@ -6,7 +6,7 @@
 #include "breathe_2_state.h"
 
 #define DEFAULT_STEP_INTERVAL (100) // in milliseconds
-#define STEP_DELTA (10)                // change in 50mS increments
+#define STEP_DELTA (5)                // change in 50mS increments
 #define MIN_STEP_INTERVAL (10)
 #define MAX_STEP_INTERVAL (1000)
 
@@ -22,14 +22,15 @@ void Breathe2State::enter(uint8_t *data)
   red = data[0];
   green = data[1];
   blue = data[2];
+  white = data[3];
   breathe_value = 100.0;
-  update_fractional(red, green, blue);
+  update_fractional(red, green, blue, white);
 }
 
 
 void Breathe2State::mode_button(void)
 {
-  go_to("static", cached_data);
+  go_to("white", cached_data);
 }
 
 
