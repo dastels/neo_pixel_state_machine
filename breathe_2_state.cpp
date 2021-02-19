@@ -38,6 +38,7 @@ void Breathe2State::mode_button(void)
 }
 
 
+// Breathe faster
 void Breathe2State::red_button(void)
 {
   step_interval -= STEP_DELTA;
@@ -47,12 +48,14 @@ void Breathe2State::red_button(void)
 }
 
 
+// Reset breather rate
 void Breathe2State::green_button(void)
 {
   step_interval = DEFAULT_STEP_INTERVAL;
 }
 
 
+// Breathe slower
 void Breathe2State::blue_button(void)
 {
   step_interval += STEP_DELTA;

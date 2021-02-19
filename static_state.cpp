@@ -31,6 +31,8 @@ void StaticState::mode_button()
   go_to("breathe1", cached_data);
 }
 
+
+// Change red value
 void StaticState::red_button()
 {
   red = next_value(red);
@@ -38,6 +40,7 @@ void StaticState::red_button()
 }
 
 
+// Change green value
 void StaticState::green_button()
 {
   green = next_value(green);
@@ -45,6 +48,7 @@ void StaticState::green_button()
 }
 
 
+// Change blue value
 void StaticState::blue_button()
 {
   blue = next_value(blue);

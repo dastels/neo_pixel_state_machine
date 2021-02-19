@@ -35,6 +35,7 @@ void Breathe1State::mode_button(void)
 }
 
 
+// Change red value
 void Breathe1State::red_button(void)
 {
   red = next_value(red);
@@ -42,6 +43,7 @@ void Breathe1State::red_button(void)
 }
 
 
+// Change green value
 void Breathe1State::green_button(void)
 {
   green = next_value(green);
@@ -49,6 +51,7 @@ void Breathe1State::green_button(void)
 }
 
 
+// Change blue value
 void Breathe1State::blue_button(void)
 {
   blue = next_value(blue);
