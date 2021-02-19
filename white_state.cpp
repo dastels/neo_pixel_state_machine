@@ -32,6 +32,7 @@ void WhiteState::mode_button()
 }
 
 
+// Increase white value
 void WhiteState::red_button()
 {
   white = next_value(white);
@@ -39,6 +40,7 @@ void WhiteState::red_button()
 }
 
 
+// Set white value to the mid point
 void WhiteState::green_button()
 {
   white = 127;
@@ -46,6 +48,7 @@ void WhiteState::green_button()
 }
 
 
+// Decrease white value
 void WhiteState::blue_button()
 {
   white = previous_value(white);
