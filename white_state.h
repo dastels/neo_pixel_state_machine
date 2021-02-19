@@ -12,8 +12,8 @@
 
 class WhiteState: public State
 {
- public:
-WhiteState(StateMachine *owner_machine);
+public:
+  WhiteState(StateMachine *owner_machine);
   void enter(uint8_t *data);
   void mode_button();
   void red_button();
