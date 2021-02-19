@@ -8,6 +8,7 @@
 
 #include <stdint.h>
 #include <Adafruit_NeoPixel.h>
+#include "config.h"
 
 class StateMachine;
 

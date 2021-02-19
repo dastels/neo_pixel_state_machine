@@ -28,7 +28,11 @@ void State::go_to(char *state_name, uint8_t *data)
 
 void State::update_neopixels(uint8_t red, uint8_t green, uint8_t blue,uint8_t white)
 {
+#if RGBW == 1
   strip.fill(strip.Color(red, green, blue, white));
+#else
+  strip.fill(strip.Color(red, green, blue));
+#endif
   strip.show();
 }
 

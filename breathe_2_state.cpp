@@ -30,7 +30,11 @@ void Breathe2State::enter(uint8_t *data)
 
 void Breathe2State::mode_button(void)
 {
+#if RGBW == 1
   go_to("white", cached_data);
+#else
+  go_to("static", cached_data);
+#endif
 }
 
 
