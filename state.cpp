@@ -47,11 +47,6 @@ uint8_t State::next_value(uint8_t c)
   }
 }
 
-uint8_t State::middle_value(uint8_t c)
-{
-  return 127;
-}
-
 uint8_t State::previous_value(uint8_t c)
 {
   if (c == 0) {

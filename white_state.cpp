@@ -41,7 +41,7 @@ void WhiteState::red_button()
 
 void WhiteState::green_button()
 {
-  white = middle_value(white);
+  white = 127;
   update_neopixels(red, green, blue, white);
 }
 

@@ -40,7 +40,6 @@ class State {
   virtual void blue_button() {}
   void go_to(char *state_name, uint8_t *data=nullptr);
   uint8_t next_value(uint8_t c);
-  uint8_t middle_value(uint8_t c);
   uint8_t previous_value(uint8_t c);
 };
 
