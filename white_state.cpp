@@ -32,32 +32,6 @@ void WhiteState::mode_button()
 }
 
 
-uint8_t next_value(uint8_t c)
-{
-  if (c == 255) {
-    return 0;
-  } else if (c == 240) {
-    return 255;
-  } else {
-    return c + 16;
-  }
-}
-
-uint8_t middle_value(uint8_t c)
-{
-  return 127;
-}
-
-uint8_t previous_value(uint8_t c)
-{
-  if (c == 0) {
-    return 255;
-  } else if (c == 15) {
-    return 0;
-  } else {
-    return c - 16;
-  }
-}
 void WhiteState::red_button()
 {
   white = next_value(white);
