@@ -10,8 +10,9 @@
 // MAKE SURE THESE TWO AGREE
 //******************************************************************************
 
-#define RGBW (0)                // 0 = RGB pixels, 1 = RGBW pixels
+#define RGBW (1)                // 0 = RGB pixels, 1 = RGBW pixels
 #define PIXEL_TYPE (NEO_GRBW)
-
+#define PIN_NUM (1)
+#define PIXEL_COUNT (7)
 
 #endif

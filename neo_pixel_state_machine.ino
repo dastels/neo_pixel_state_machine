@@ -23,7 +23,7 @@ Bounce mode_button = Bounce();
 Bounce red_button = Bounce();
 Bounce green_button = Bounce();
 Bounce blue_button = Bounce();
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(7, 1, PIXEL_TYPE + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(PIXEL_COUNT, PIN_NUM, PIXEL_TYPE + NEO_KHZ800);
 StateMachine machine = StateMachine();
 
 void setup()
