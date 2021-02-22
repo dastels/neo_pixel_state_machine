@@ -5,13 +5,13 @@
 
 #include "breathe_2_state.h"
 
-#define DEFAULT_STEP_INTERVAL (100) // in milliseconds
-#define STEP_DELTA (5)                // change in 50mS increments
-#define MIN_STEP_INTERVAL (10)
+#define DEFAULT_STEP_INTERVAL (50) // in milliseconds
+#define STEP_DELTA (1)                // change in 50mS increments
+#define MIN_STEP_INTERVAL (1)
 #define MAX_STEP_INTERVAL (1000)
 
 Breathe2State::Breathe2State(StateMachine *machine)
-  : BreathingState(machine, "breathe2", 5.0, DEFAULT_STEP_INTERVAL)
+  : BreathingState(machine, "breathe2", 1.0, DEFAULT_STEP_INTERVAL)
 {
 }
 
