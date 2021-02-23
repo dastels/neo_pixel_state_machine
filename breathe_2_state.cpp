@@ -30,11 +30,11 @@ void Breathe2State::enter(uint8_t *data)
 
 void Breathe2State::mode_button(void)
 {
-#if RGBW == 1
-  go_to("white", cached_data);
-#else
+  cached_data[0] = red;
+  cached_data[1] = green;
+  cached_data[2] = blue;
+  cached_data[3] = white;
   go_to("flash1", cached_data);
-#endif
 }
 
 
