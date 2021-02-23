@@ -12,8 +12,8 @@
 #include "static_state.h"
 #include "breathe_1_state.h"
 #include "breathe_2_state.h"
-//#include "flash_1_state.h"
-//#include "flash_2_state.h"
+#include "flash_1_state.h"
+#include "flash_2_state.h"
 
 
 const uint32_t tick_interval = 5; // mS
@@ -46,8 +46,8 @@ void setup()
   machine.add_state(new StaticState(&machine));
   machine.add_state(new Breathe1State(&machine));
   machine.add_state(new Breathe2State(&machine));
-  // machine.add_state(new Flash1State(&machine));
-  // machine.add_state(new Flash2State(&machine));
+  machine.add_state(new Flash1State(&machine));
+  machine.add_state(new Flash2State(&machine));
   machine.reset();
 }
 
